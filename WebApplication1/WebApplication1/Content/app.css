@@ -1,0 +1,16 @@
+﻿body {
+        font-family: 'Indie Flower', cursive;
+font-size: 30px;
+}
+
+    
+header {
+    background-color: #ff6a00;
+    padding: 30px;
+}
+
+footer {
+    background-color: #00ff21;
+    padding: 10px 30px;
+}
+
