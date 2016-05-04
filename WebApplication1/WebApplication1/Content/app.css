@@ -1,16 +1,72 @@
 ﻿body {
         font-family: 'Indie Flower', cursive;
-font-size: 30px;
+font-size: 28px;
 }
 
     
 header {
     background-color: #ff6a00;
     padding: 30px;
+   color: white;
 }
 
 footer {
     background-color: #00ff21;
     padding: 10px 30px;
+   color: white;
 }
+
+.navbar-default {
+   background-color: #ff6a00;
+    border-width: 0px; 
+}
+
+
+.navbar-default .navbar-brand {
+   color: white;
+    border-width: 0px; 
+}
+
+
+.navbar-default .navbar-nav>li>a {
+   color: white;
+    border-width: 0px; 
+}
+
+.friend {
+    border: solid 1px #BBB;
+    box-shadow: 2px 2px 10px #BBB;
+    margin-bottom: 8px;
+    padding: 5px;
+}
+
+.friend-initials {
+
+    border: solid 1px white;
+    background-color: red;
+    color: white;
+    font-size: smaller;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    padding-top: 6px;
+    float: left;
+
+}
+
+.friend-name {
+    float: right;
+    font-weight: bold;
+    padding-top: 8px;
+    max-width: 160px;
+}
+
+    
+.friend-details {
+    font-size: smaller;
+    text-align: right;
+    clear: both;
+
+}
+
 
