@@ -1,36 +1,54 @@
 ﻿body {
-        font-family: 'Indie Flower', cursive;
-font-size: 28px;
+    font-family: 'Indie Flower';
+    font-size: 28px;
 }
 
-    
+
 header {
     background-color: #ff6a00;
     padding: 30px;
-   color: white;
+    color: white;
+}
+
+.section aside {
+    margin-top: 25px;
 }
 
 footer {
     background-color: #00ff21;
     padding: 10px 30px;
-   color: white;
+    color: white;
 }
 
 .navbar-default {
-   background-color: #ff6a00;
-    border-width: 0px; 
+    background-color: #ff6a00;
+    border-width: 0px;
 }
 
+.navbar.navbar-default.navbar-fixed-top {
+    padding: 30px;
+    transition: padding 0.5s
+}
+
+.navbar.navbar-default.navbar-fixed-top.scrolled {
+    padding: 0px 30px;
+}
 
 .navbar-default .navbar-brand {
-   color: white;
-    border-width: 0px; 
+    color: white;
+    border-width: 0px;
 }
 
 
-.navbar-default .navbar-nav>li>a {
-   color: white;
-    border-width: 0px; 
+.navbar-default .navbar-nav > li > a {
+    color: white;
+    border-width: 0px;
+}
+
+.anchor {
+    display: block;
+    top: -95px;
+    position: relative;
 }
 
 .friend {
@@ -41,7 +59,6 @@ footer {
 }
 
 .friend-initials {
-
     border: solid 1px white;
     background-color: red;
     color: white;
@@ -51,7 +68,6 @@ footer {
     text-align: center;
     padding-top: 6px;
     float: left;
-
 }
 
 .friend-name {
@@ -61,12 +77,112 @@ footer {
     max-width: 160px;
 }
 
-    
+
 .friend-details {
     font-size: smaller;
     text-align: right;
     clear: both;
-
 }
 
 
+/* PROFILE */
+
+.profile {
+    border: solid 1px #BBB;
+    box-shadow: 0px 2px 10px #BBB;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 4px;
+}
+
+.profile-image {
+    height: 100px;
+    background-position: center;
+    background-size: cover;
+    margin: -4px -4px 0 -4px;
+}
+
+.profile-initials {
+    border: solid 1px white;
+    background-color: #008000;
+    color: white;
+    font-size: x-large;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    padding-top: 6px;
+    margin-top: -25px;
+}
+
+.profile-name {
+    float: right;
+    margin-top: -25px;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.profile-description {
+    clear: both;
+    padding-top: 15px;
+    font-size: large;
+    font-family: serif;
+}
+
+
+.profile .form-group:first-child {
+    padding-top: 5px;
+}
+
+/* MAIN */
+
+.main {
+    min-height: 400px;
+    background-position: center;
+    background-size: cover;
+    padding: 12px;
+    margin-top: 20px;
+}
+
+    .main h3 {
+        color: white;
+    }
+
+.record {
+    background-color: rgba(255, 255, 255, 0.6);
+    border: solid 1px #BBB;
+    box-shadow: 0px 2px 10px #BBB;
+    padding: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.record-title {
+    font-size: larger;
+}
+
+.record-description {
+    font-style: italic;
+    font-size: smaller;
+}
+
+.record-rating {
+    font-family: monospace;
+    font-size: xx-large;
+    font-weight: bold;
+    width: 60px;
+}
+
+@media (max-width: 992px) {
+    .record {
+        flex-direction: row-reverse;
+    }
+
+    .record-rating {
+        font-size: large;
+        margin: 10px;
+        color: #00ff00;
+        font-family: sans-serif;
+    }
+}

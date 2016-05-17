@@ -13,8 +13,8 @@
     <link href="~/Content/app.css" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 
-    <nav class="navbar navbar-default">
-        <div >
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div>
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -23,26 +23,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Brand</a>
+                <a class="navbar-brand" href="#">LearnDev</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Link 111 <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Link 222</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
+
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search">
@@ -50,17 +35,9 @@
                     <button type="submit" class="btn btn-default">Submit</button>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Link 333</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#coursesLink">Courses</a></li>
+                    <li><a href="#articlesLink">Articles</a></li>
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -71,49 +48,80 @@
     <header class="container-fluid">
         Learn Dev
     </header>
-<section class="container-fluid">
-    <div class="row">
-        <section class="col-lg-7 col-md-6 col-md-push-3">
-            ITEMS
-        </section>
-        <aside class="col-md-3 col-lg-pull-7 col-md-pull-6"> 
-            PROFILE
-        </aside>
-        <aside class="col-lg-2 col-md-3 friends">
-            <h3>FRIENDS</h3>
-            <div class="friend">
-                <div class="img-circle friend-initials">HS</div>
-                <div class="friend-name">Homer Simpson</div>
-                <div class="friend-details ">
-                    <div>12 courses taken</div>
-                    <div>10 article reviewed</div>
-                </div>
-            </div>
+    <section class="container-fluid">
+        <div class="row">
+            <section class="col-lg-7 col-md-6 col-md-push-3">
+                <div class="main" style="background-image: url('@Url.Content("~/Images/main-background.jpg") ')">
+                    <a class="anchor" name="coursesLink"> </a>
+                    <h3>My Courses</h3>
+                    <div id="coursesNode"> </div>
 
-            <div class="friend">
-                <div class="img-circle friend-initials">MS</div>
-                <div class="friend-name">Marge Simpson</div>
-                <div class="friend-details ">
-                    <div>2 courses taken</div>
-                    <div>77 article reviewed</div>
+                    <h3>My Articles</h3>
+                    <div id="articlesNode"> </div>
                 </div>
-            </div>
+            </section>
+            <aside class="col-md-3 col-lg-pull-7 col-md-pull-6">
+                <div class="profile">
+                    <div class="profile-image" style="background-image: url('@Url.Content("~/Images/profile-background.jpg") ')"></div>
+                    <div class="img-circle profile-initials">AB</div>
+                    <div class="profile-name">Vlad Tyuterev</div>
+                    <div class="profile-description">
+                        If you're using the static Mapper method, configuration should only happen once per AppDomain. That means the best place to put the configuration code is in application startup, such as the Global.asax file for ASP.NET applications. Typically, the configuration bootstrapper class is in its own class, and this bootstrapper class is called from the startup method. The bootstrapper class should call Mapper.Initialize to configure the type maps.
+                    </div>
+                    <div>
+                        <div id="profileNode"></div>
+                    </div>
+                </div>
+            </aside>
+            <aside class="col-lg-2 col-md-3 friends">
+                <h3>FRIENDS</h3>
+                <div id="friendsNode">
 
-            <div class="friend">
-                <div class="img-circle friend-initials">MS</div>
-                <div class="friend-name">Marge liuoiu oiu lkj iuy kkjh Simpson</div>
-                <div class="friend-details ">
-                    <div>2 courses taken</div>
-                    <div>77 article reviewed</div>
                 </div>
-            </div> 
-        </aside>
-    </div>
-</section>
+            </aside>
+        </div>
+    </section>
     <footer class="container-fluid">
         (c) Copyright ADP
     </footer>
+
     <script src="~/scripts/jquery-1.10.2.min.js"></script>
+
+    <script>
+        // Instead of using data-dojo-config, we're creating a dojoConfig
+        // object *before* we load dojo.js; they're functionally identical,
+        // it's just easier to read this approach with a larger configuration.
+        var dojoConfig = {
+            async: true,
+            // This code registers the correct location of the "demo"
+            // package so we can load Dojo from the CDN whilst still
+            // being able to load local modules
+            packages: [
+            {
+                name: "app",
+                location: '@Url.Content("~/scripts/app")'
+            }
+            ]
+        };
+    </script>
+
+    <script src="https://fb.me/react-0.14.8.js"></script>
+    <script src="https://fb.me/react-dom-0.14.8.js"></script>
+
+    <!-- load Dojo -->
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
+
     <script src="~/scripts/bootstrap.min.js"></script>
+
+<!-- 
+    <script src="~/scripts/app/friends.js"></script>
+    <script src="~/scripts/app/items.js"></script>
+    <script src="~/scripts/app/profile.js"></script>
+-->
+
+    <script type="text/javascript">
+        require(["app/index"]);
+
+    </script>
 </body>
 </html>
